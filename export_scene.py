@@ -64,6 +64,9 @@ class MYADDON_OT_export_scene(bpy.types.Operator,bpy_extras.io_utils.ExportHelpe
             collider["center"]=object["collider_size"].to_list()
             json_object["collider"]=collider
 
+        if "disabled" in object:
+            json_object["disabled"]=object["disabled"]
+
         data_parent.append(json_object)
 
         if len(object.children) > 0:
@@ -109,6 +112,7 @@ class MYADDON_OT_export_scene(bpy.types.Operator,bpy_extras.io_utils.ExportHelpe
             temp_str=indent+"CS %f %f %f"
             temp_str%=(object["collider_size"][0],object["collider_size"][1],object["collider_size"][2])
             self.write_and_print(file,temp_str)
+
             
         self.write_and_print(file,indent+'END')
         self.write_and_print(file,'')
