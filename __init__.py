@@ -11,6 +11,7 @@ from .add_collider import MYADDON_OT_add_collider
 from .add_collider import OBJECT_PT_collider
 from .add_disabled import OBJECT_PT_disabled
 from .add_disabled import MYADDON_OT_add_disabled
+from .load_spawn_object import MYADDON_OT_load_spawn_object
 
 bl_info={
     "name":"レベルエディタ",
@@ -39,6 +40,7 @@ classes=(
     MYADDON_OT_export_scene,
     MYADDON_OT_add_disabled,
     OBJECT_PT_disabled,
+    MYADDON_OT_load_spawn_object,
 )
 
 def register():
